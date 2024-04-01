@@ -1,20 +1,17 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
-
+This is a repository including  a source of the spring-boot application and ci/cd pipeline to automate building and deploying of the application in the Azure.
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+There is the below structure:
+1.	src directory: It is including the sorce of java project, created by spring-boot.
+2.	ci-pipeline.yml: With the help of ci-pipeline.yml you can build and package java app by Apache Maven.
+3.	cd-pipeline.yml: With the help of cd-pipeline.yml you can Deploy java app on Azure Web App Service as a container 
+4.	pom.xml: It contains project information and configuration which is used by Maven to build the project.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+# Build Process
+To build our application automatically we have to run ci-pipeline.yml.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+# Deploy Process
+To deploy our application automatically on the Azure Web App Service we have to run cd-pipeline.yml.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+# contact
+If you need more help or explanation please contact with me: fa.mahmoudi64@gmail.com
