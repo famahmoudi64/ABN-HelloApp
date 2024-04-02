@@ -27,6 +27,8 @@ stages:
         - task: Docker@2
           displayName: building docker image
           inputs:
+            containerRegistry: 'docker-registry-service-connection'
+            repository: 'repo-for-abn'
             command: 'build'
             Dockerfile: '**/Dockerfile'
 
