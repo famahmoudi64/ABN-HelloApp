@@ -24,6 +24,11 @@ stages:
             mavenAuthenticateFeed: false
             effectivePomSkip: false
             sonarQubeRunAnalysis: false
+        - task: CopyFiles@2
+          inputs:
+            Contents: '**'
+            TargetFolder: '$(Build.ArtifactsStagingDirectory)'
+               
         - task: Docker@2
           displayName: building docker image
           inputs:
