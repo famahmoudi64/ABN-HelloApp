@@ -16,7 +16,7 @@ stages:
         - task: Maven@4
           inputs:
             mavenPomFile: 'pom.xml'
-            goals: 'compile'
+            goals: 'package'
             publishJUnitResults: true
             testResultsFiles: '**/surefire-reports/TEST-*.xml'
             javaHomeOption: 'JDKVersion'
