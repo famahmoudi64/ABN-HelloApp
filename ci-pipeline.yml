@@ -35,7 +35,7 @@ stages:
         - task: PublishBuildArtifacts@1
           displayName: Publish to Azure Pipeline
           inputs:
-            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+            PathtoPublish: '$(Build.ArtifactStagingDirectory)/target/springBootHelloWorld-0.0.1-SNAPSHOT.jar'
             ArtifactName: 'drop'
             publishLocation: 'Container'
         - task: Docker@2
