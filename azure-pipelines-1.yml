@@ -14,4 +14,4 @@ steps:
     scriptLocation: 'inlineScript'
     inlineScript: |
       az acr create --resource-group abn-rg \
-        --name abn-acr-registry --sku Basic
+        --name abnAcrRegistry --sku Basic
