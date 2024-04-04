@@ -6,9 +6,9 @@
 trigger: none
 
 pool: 
-  name: Default
+  # name: Default
 
-  # vmImage: ubuntu-latest
+   vmImage: ubuntu-latest
 
 stages:
   - stage: CIstage
