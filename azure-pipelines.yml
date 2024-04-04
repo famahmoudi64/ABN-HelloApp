@@ -12,4 +12,13 @@ steps:
     azureSubscription: 'Azure subscription 1(7a11095f-a846-497e-bfd1-accc49689b9c)'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az monitor metrics alert create -n metricalert1 -g abn-rg --scopes webappservicetest1 --condition "Http5xx >= 1" --description sampledesc'
+    inlineScript: |
+      az monitor metrics alert create \
+        --name SuccessCallsAlert \
+        --resource-group abn-rg \
+        --scopes /subscriptions/7a11095f-a846-497e-bfd1-accc49689b9c/resourceGroups/abn-rg/providers/Microsoft.Web/sites/webappservicetest1  \
+        --metric 'TotalRequests' \
+        --operator 'GreaterThan' \
+        --threshold 5 \
+        --dimension "200" \
+        --description 'Alert when success calls exceed 5'
