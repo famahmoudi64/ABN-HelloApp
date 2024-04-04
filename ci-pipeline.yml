@@ -27,10 +27,11 @@ stages:
             mavenAuthenticateFeed: false
             effectivePomSkip: false
             sonarQubeRunAnalysis: false
+
         - task: CopyFiles@2
-          displayName: Copy file to Stage Directory
+          displayName: Copy Jar file to Staging Directory
           inputs:
-            Contents: '**'
+            Contents: '**/*.jar'
             TargetFolder: '$(Build.ArtifactsStagingDirectory)'
         - task: PublishBuildArtifacts@1
           displayName: Publish to Azure Pipeline
