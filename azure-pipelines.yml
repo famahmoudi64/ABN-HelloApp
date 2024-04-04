@@ -1,0 +1,18 @@
+
+trigger: none
+
+
+pool: Default
+  # vmImage: ubuntu-latest
+stages:
+  - stage: stopAppService
+    jobs:
+      - job: stopJob
+        steps:
+        - task: AzureCLI@2
+          displayName: Stop WebApp Service
+          inputs:
+            azureSubscription: 'Azure subscription 1(7a11095f-a846-497e-bfd1-accc49689b9c)'
+            scriptType: 'bash'
+            scriptLocation: 'inlineScript'
+            inlineScript: 'az webapp stop --name webapp1 --resource-group abn-rg'
