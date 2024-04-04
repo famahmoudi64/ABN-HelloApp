@@ -21,6 +21,8 @@ stages:
               scriptLocation: 'inlineScript'
               inlineScript: 'az appservice plan create --name   appservice-plan1 --resource-group abn-rg --is-linux'
 
+     - job: job2
+       steps:
           - task: AzureCLI@2
             displayName: Creating AppService
             inputs:
