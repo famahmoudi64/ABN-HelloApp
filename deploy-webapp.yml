@@ -27,5 +27,5 @@ stages:
               azureSubscription: 'Azure subscription 1(7a11095f-a846-497e-bfd1-accc49689b9c)'
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
-              inlineScript: 'az webapp create -g abn-rg --plan appservice-plan1 --name webappservice1 --deployment-container-image nginx'
+              inlineScript: 'az webapp create --resource-group abn-rg --plan appservice-plan1 --name webapp1 --deployment-container-image-name nginx'
  
