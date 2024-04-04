@@ -1,1 +1,21 @@
 # This is CD pipeline to deploy java application in the Azure infra.
+
+trigger: none
+
+pool: 
+   name: Default
+
+  #  vmImage: ubuntu-latest
+
+stages:
+  - stage: CDstage
+    jobs:
+      - job: CDjob
+        steps:   
+
+        - task: AzureWebAppContainer@1
+          inputs:
+            azureSubscription: 'Azure subscription 1(7a11095f-a846-497e-bfd1-accc49689b9c)'
+            appName: 'webappservicetest1'
+            containers: 'abnacr.azurecr.io/$(Build.Repository.Name):$(Build.BuildId)'
+            
