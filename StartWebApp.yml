@@ -12,13 +12,13 @@ stages:
   - stage: startAppService
     jobs:
       - job: startJob
+        steps:
+        - task: AzureCLI@2
+          displayName: Start WebApp Service
+          inputs:
+            azureSubscription: 'Azure subscription 1(7a11095f-a846-497e-bfd1-accc49689b9c)'
+            scriptType: 'bash'
+            scriptLocation: 'inlineScript'
+            inlineScript: 'az webapp start --name webapp1 --resource-group abn-rg'
 
 
-# steps:
-# - script: echo Hello, world!
-#   displayName: 'Run a one-line script'
-
-# - script: |
-#     echo Add other tasks to build, test, and deploy your project.
-#     echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
