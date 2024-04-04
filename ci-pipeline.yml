@@ -39,12 +39,20 @@ stages:
             PathtoPublish: '$(Build.ArtifactStagingDirectory)'
             ArtifactName: 'drop'
             publishLocation: 'Container'
-        - task: Docker@2
-          displayName: Build&Push Docker image
+        - task: Docker@1
           inputs:
-            containerRegistry: 'docker-registry-service-connection'
-            repository: 'repo-for-abn'
-            command: 'buildAndPush'
-            Dockerfile: '**/Dockerfile'
+            containerregistrytype: 'Container Registry'
+            dockerRegistryEndpoint: 'docker-registry-service-connection'
+            command: 'Build an image'
+            dockerFile: '**/Dockerfile'
+            imageName: '$(Build.Repository.Name):$(Build.BuildId)'
+            
+        # - task: Docker@2
+        #   displayName: Build&Push Docker image
+        #   inputs:
+        #     containerRegistry: 'docker-registry-service-connection'
+        #     repository: 'repo-for-abn'
+        #     command: 'buildAndPush'
+        #     Dockerfile: '**/Dockerfile'
 
 
