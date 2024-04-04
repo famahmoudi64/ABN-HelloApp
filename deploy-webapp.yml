@@ -19,6 +19,13 @@ stages:
               azureSubscription: 'Azure subscription 1(7a11095f-a846-497e-bfd1-accc49689b9c)'
               scriptType: 'ps'
               scriptLocation: 'inlineScript'
-              inlineScript: 'az appservice plan create --name appservice-plan1 --resource-group abn-rg --is-linux'
-
-
+              inlineScript: 'az appservice plan create --name'
+          - task: AzureCLI@2
+            displayName: Creating AppService
+            inputs:
+              azureSubscription: 'Azure subscription 1(7a11095f-a846-497e-bfd1-accc49689b9c)'
+              scriptType: 'ps'
+              scriptLocation: 'inlineScript'
+              inlineScript: 'az webapp create --name webapp1 --resource-group abn-rg --plan appservice-plan1 --runtime java 17'
+           
+          
