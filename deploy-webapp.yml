@@ -13,16 +13,14 @@ stages:
     jobs: 
      - job: AppService
        steps:
-          - task: AzureCLI@2
-            displayName: Creating AppServicePlan
-            inputs:
-              azureSubscription: 'Azure subscription 1(7a11095f-a846-497e-bfd1-accc49689b9c)'
-              scriptType: 'bash'
-              scriptLocation: 'inlineScript'
-              inlineScript: 'az appservice plan create --name   appservice-plan1 --resource-group abn-rg --is-linux'
-
-     - job: job2
-       steps:
+          # - task: AzureCLI@2
+          #   displayName: Creating AppServicePlan
+          #   inputs:
+          #     azureSubscription: 'Azure subscription 1(7a11095f-a846-497e-bfd1-accc49689b9c)'
+          #     scriptType: 'bash'
+          #     scriptLocation: 'inlineScript'
+          #     inlineScript: 'az appservice plan create --name   appservice-plan1 --resource-group abn-rg --is-linux'
+   
           - task: AzureCLI@2
             displayName: Creating AppService
             inputs:
