@@ -1,0 +1,17 @@
+
+
+trigger:
+- main
+
+pool: Default
+  # vmImage: ubuntu-latest
+
+steps: 
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Azure subscription 1(7a11095f-a846-497e-bfd1-accc49689b9c)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az acr create --resource-group abn-rg \
+        --name abn-acr-registry --sku Basic
