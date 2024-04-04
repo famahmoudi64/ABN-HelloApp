@@ -46,9 +46,9 @@ stages:
             script: |
               # Write your commands here
               
-              echo 'Hello world'
-              docker --help
-              docker buildx --help
+              docker buildx create --name mybuilder
+              docker buildx use mybuilder
+              docker buildx build --platform linux/amd64,linux/arm64 -t my-image:latest .
           
 
         - task: Docker@1
