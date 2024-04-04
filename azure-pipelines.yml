@@ -1,0 +1,15 @@
+
+
+trigger: none
+
+
+pool: default
+  # vmImage: ubuntu-latest
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Azure subscription 1(7a11095f-a846-497e-bfd1-accc49689b9c)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az monitor metrics alert create -n metricalert1 -g abn-rg --scopes webappservicetest1 --condition "Http5xx >= 1" --description sampledesc'
