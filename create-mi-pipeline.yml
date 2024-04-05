@@ -20,4 +20,4 @@ steps:
          az role assignment create --assignee 
        "6c2c8bb8-23cb-48c2-8038-d7aa446de9be"  \ 
       --role acrpull \
-      --scope "/subscriptions/7a11095f-a846-497e-bfd1-accc49689b9c/resourceGroups/abn-rg/providers/Microsoft.ContainerRegistry/registries/abnacr"
+      --scope "/subscriptions/7a11095f-a846-497e-bfd1-accc49689b9c/resourceGroups/abn-rg"
