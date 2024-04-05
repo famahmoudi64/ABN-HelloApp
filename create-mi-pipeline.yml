@@ -1,7 +1,6 @@
-
+# This is a pipeline to create a Managed Identity and assign an appropriate role to specific scope. 
 
 trigger: none
-
 
 pool: default
   # vmImage: ubuntu-latest
