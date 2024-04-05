@@ -52,6 +52,8 @@ stages:
 
         - task: Docker@2
           inputs:
+            containerRegistry: 'acr-service-connection'
+            repository: 'abnacr.azurecr.io/HelloApp'
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
 
