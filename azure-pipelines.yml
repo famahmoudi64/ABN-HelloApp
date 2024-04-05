@@ -1,0 +1,20 @@
+
+
+trigger: none
+
+
+pool: default
+  # vmImage: ubuntu-latest
+
+steps:
+- task: AzureCLI@2
+  displayName: Creating Managed Identity & Assign Role to ACR
+  inputs:
+    azureSubscription: 'Azure subscription 1(7a11095f-a846-497e-bfd1-accc49689b9c)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az identity create --name mi-acr  --resource-group abn-rg --subscription 7a11095f-a846-497e-bfd1-accc49689b9c
+      
+            # Assign access to ACR
+            az role assignment create --assignee mi-acr --role acrpull --scope /subscriptions/7a11095f-a846-497e-bfd1-accc49689b9c/resourceGroups/abn-rg/providers/Microsoft.ContainerRegistry/registries/abnacr
