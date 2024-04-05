@@ -33,6 +33,7 @@ stages:
           inputs:
             Contents: '**/*.jar'
             TargetFolder: '$(Build.ArtifactsStagingDirectory)'
+          
         - task: PublishBuildArtifacts@1
           displayName: Publish to Azure Pipeline
           inputs:
