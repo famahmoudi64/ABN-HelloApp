@@ -40,31 +40,18 @@ stages:
             ArtifactName: 'drop'
             publishLocation: 'Container'
 
-        - task: Bash@3
-          inputs:
-            targetType: 'inline'
-            script: |
-              # Write your commands here
-              
-              docker buildx create --name mybuilder
-              docker buildx use mybuilder
-              docker buildx build --platform linux/amd64,linux/arm64 -t my-image:latest .
-          
-
-        - task: Docker@1
-          inputs:
-            containerregistrytype: 'Container Registry'
-            dockerRegistryEndpoint: 'docker-registry-service-connection'
-            command: 'Build an image'
-            dockerFile: '**/Dockerfile'
-            imageName: '$(Build.Repository.Name):$(Build.BuildId)'
-            
-        # - task: Docker@2
-        #   displayName: Build&Push Docker image
+        # - task: Bash@3
         #   inputs:
-        #     containerRegistry: 'docker-registry-service-connection'
-        #     repository: 'repo-for-abn'
-        #     command: 'buildAndPush'
-        #     Dockerfile: '**/Dockerfile'
+        #     targetType: 'inline'
+        #     script: |
+        #       # create docker image
+        #       docker build -t HelloAppImage .
+        #       docker tag HelloAppImage  HelloAppImage:1.0
+        #       docker login abnacr.azurecr.io
+        #       docker push  HelloAppImage:1.0
 
+        - task: Docker@2
+          inputs:
+            command: 'buildAndPush'
+            Dockerfile: '**/Dockerfile'
 
