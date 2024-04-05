@@ -40,17 +40,8 @@ stages:
             ArtifactName: 'drop'
             publishLocation: 'Container'
 
-        # - task: Bash@3
-        #   inputs:
-        #     targetType: 'inline'
-        #     script: |
-        #       # create docker image
-        #       docker build -t HelloAppImage .
-        #       docker tag HelloAppImage  HelloAppImage:1.0
-        #       docker login abnacr.azurecr.io
-        #       docker push  HelloAppImage:1.0
-
         - task: Docker@2
+          displayName: build and push Docker image to ACR
           inputs:
             containerRegistry: 'acr-service-connection'
             repository: 'abnacr.azurecr.io/HelloApp'
