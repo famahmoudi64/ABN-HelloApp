@@ -56,4 +56,6 @@ stages:
             repository: 'abnacr.azurecr.io/HelloApp'
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
+          
+
 
