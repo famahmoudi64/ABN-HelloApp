@@ -1,3 +1,4 @@
+# This is a pipeline for stopping web app service in azure
 
 trigger: none
 
