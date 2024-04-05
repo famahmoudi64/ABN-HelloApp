@@ -1,7 +1,5 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# This is a CI pipeline to build, package jar file and create a Docker image. 
+# Then push the Docker image to the Docker registry (ACR)
 
 trigger: none
 
