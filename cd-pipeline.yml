@@ -1,4 +1,4 @@
-# This is a CD pipeline to deploy java application on the webapp service.
+# This is a CD pipeline to deploy docker image as a container  on the webapp service.
 
 trigger: none
 
